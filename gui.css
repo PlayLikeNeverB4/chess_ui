@@ -1,0 +1,141 @@
+.piece {
+		position : absolute;
+		cursor : pointer;
+}
+.white {
+}
+.black {
+}
+.king {
+		height : 57px;
+		width : 57px;
+}
+.queen {
+		height : 58px;
+		width : 58px;
+}
+.rook {
+		height : 55px;
+		width : 45px;
+}
+.bishop {
+		height : 58px;
+		width : 58px;
+}
+.knight {
+		height : 57px;
+		width : 56px;
+}
+.pawn {
+		height : 55px;
+		width : 44px;
+}
+.board {
+		border-collapse : collapse;
+		border : 1pt solid #000000;
+		}
+.square {
+	width : 70px;
+	height : 70px;
+}
+
+.rowcoord {
+	width : 70px;
+	height : 40px;
+	background-color : #DDDDDD;
+}
+.colcoord {
+	width : 40px;
+	height : 70px;
+	background-color : #DDDDDD;
+}
+.fillcoord {
+	width : 40px;
+	height : 40px;
+	background-color : #DDDDDD;
+}
+
+.square, .rowcoord, .colcoord, .fillcoord {
+	text-align: center;
+	border : 0;
+}
+
+.rowcoord, .colcoord, .fillcoord, .piece, #board, .popup, .popuppiece, .materialcount, .menu, .gamehistorydiv , #blackname, #whitename{
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.whiteBackground {
+	background-color : #F4DFC0;
+}
+.blackBackground {
+	background-color : #B6876B;
+}
+.selectedTo {
+	background-color : #FBF466;
+}
+.selectedFrom {
+	background-color : #FBF5A1;
+}
+.reachable {
+	background : transparent;
+	background-color : #00FFFF;	
+}
+.promotionpopup {
+	display : inline-block;
+	height : 200px;
+	width : 200px;
+	position : absolute;
+	border:1px solid grey;
+	background-color : white
+}
+.popup {
+	display : inline-block;
+	height : 100px;
+	width : 250px;
+	position : absolute;
+	border:1px solid grey;
+	background-color : white
+}
+.popuppiece {
+	cursor : pointer
+}
+.smallrook {
+	height : 45px;
+	width : 40px;
+}
+.smallbishop {
+	height : 50px;
+	width : 50px;
+}
+.smallqueen {
+	height : 50px;
+	width : 50px;
+}
+.smallknight {
+	height : 50px;
+	width : 50px;
+}
+.materialcount, .menu {
+	font-size : 20pt;
+	border-spacing : 15px;
+	border-style : solid;
+	border-width: 2px;
+	width : 350px;
+}
+.gamehistorydiv {
+	overflow-y : scroll;
+	height : 200px;
+	width : 350px;
+	border-style : solid;
+	border-width: 1px;
+}
+.gamehistorytable {
+	font-size : 16pt;
+	border-spacing : 15px 3px;
+	width : 330px;
+}

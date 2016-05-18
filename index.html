@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<head>
+<script src="scripts/jquery-1.8.3.min.js"></script>
+
+<script>
+$(document).ready( function() {
+	$("#gameinfo").submit( function() {
+		if($("input[name=PLAYER_COLOR]:checked").length > 0) {
+			var playerColor = $("input[name=PLAYER_COLOR]:checked").attr("value");
+			if(playerColor == "WHITE") {
+				$("#HW2").attr("value", "HUMAN");
+				$("#HB2").attr("value", "COMPUTER");
+			}
+			else if(playerColor == "BLACK") {
+				$("#HW2").attr("value", "COMPUTER");
+				$("#HB2").attr("value", "HUMAN");
+			}
+			else {
+				alert("Error at player color ?!");
+				return false;
+			}
+		}
+		else {
+			alert("Please choose a color!");
+			return false;
+		}
+		
+		if($("input[name=DIFFICULTY]:checked").length > 0) {
+			var playerColor = $("input[name=PLAYER_COLOR]:checked").attr("value");
+			var diff = $("input[name=DIFFICULTY]:checked").attr("value");
+			
+			if(playerColor == "WHITE")
+				$("#DB2").attr("value", diff);
+			else if(playerColor == "BLACK") 
+				$("#DW2").attr("value", diff);
+			else {
+				alert("Error at player color ?!");
+				return false;
+			}
+		}
+		else {
+			alert("Please choose a difficulty!");
+			return false;
+		}
+	});
+});
+</script>
+</head>
+
+<body>
+
+<p>&nbsp;</p>
+<p></p>
+<center> <div style="font-size:45pt">PLAY AGAINST GEOBOT!</div> </center>
+<hr>
+
+<center>
+
+<p>&nbsp;</p>
+<form action="game.php" method="post">
+<input id="HW1" type="hidden" name="WHITE" value="COMPUTER">
+<input id="HB1" type="hidden" name="BLACK" value="COMPUTER">
+<input id="DW1" type="hidden" name="DIFFICULTY_WHITE" value="HARD">
+<input id="DB1" type="hidden" name="DIFFICULTY_BLACK" value="MEDIUM">
+<input type="hidden" name="PLAYER_COLOR" value="___">
+<input type="submit" style="font-size:30pt" value="DEMO">
+</form>
+
+<!--
+<p>&nbsp;</p>
+<form action="game.php" method="post">
+<input id="HW1" type="hidden" name="WHITE" value="HUMAN">
+<input id="HB1" type="hidden" name="BLACK" value="HUMAN">
+<input id="DW1" type="hidden" name="DIFFICULTY_WHITE" value="EASY">
+<input id="DB1" type="hidden" name="DIFFICULTY_BLACK" value="HARD">
+<input type="hidden" name="PLAYER_COLOR" value="___">
+<input type="submit" style="font-size:30pt" value="FREE">
+</form>
+-->
+
+<p>&nbsp;</p>
+
+<form id="gameinfo" action="game.php" method="post" style="font-size:20pt" >
+<div style="font-size:30pt">Choose your color:</div>
+<input type="radio" name="PLAYER_COLOR" value="WHITE">White<br>
+<input type="radio" name="PLAYER_COLOR" value="BLACK">Black
+
+<p></p>
+
+<div style="font-size:30pt">Choose difficulty:</div>
+<input type="radio" name="DIFFICULTY" value="EASY">Easy<br>
+<input type="radio" name="DIFFICULTY" value="MEDIUM">Medium<br>
+<input type="radio" name="DIFFICULTY" value="HARD">Hard
+
+<p></p>
+
+<input id="HW2" type="hidden" name="WHITE" value="___">
+<input id="HB2" type="hidden" name="BLACK" value="__">
+<input id="DW2" type="hidden" name="DIFFICULTY_WHITE" value="___">
+<input id="DB2" type="hidden" name="DIFFICULTY_BLACK" value="__">
+<input type="submit" style="font-size:30pt" value="PLAY!">
+</form>
+<p>&nbsp;</p>
+
+</center>
+</body>
